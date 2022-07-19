@@ -9,8 +9,8 @@ def index(request):
     if request.method == "POST":
         c_name=request.POST['selection']
         num=request.POST['num']
-        print(c_name)
-        print(num)
-        # col = Colors(color_red=num)
-        # col.save()
-    return render(request, "index.html",{'color_name':c_name,'color_num':num})
+
+        col = Colors.objects.all()
+        for i in col:
+            print(i.color_red)
+    return render(request, "index.html",{'color_name':col})
