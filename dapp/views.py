@@ -10,7 +10,7 @@ def index(request):
         c_name=request.POST['selection']
         num=request.POST['num']
 
-        col = Colors.objects.all()
-        for i in col:
-            print(i.color_red)
-    return render(request, "index.html",{'color_name':col})
+        # col = Colors.objects.all()
+        # for i in col:
+        #     print(i.color_red)
+    return render(request, "index.html",{'color_name':num})

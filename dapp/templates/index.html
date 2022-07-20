@@ -47,7 +47,7 @@ const myChart = new Chart(ctx, {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
         datasets: [{
             label: '# of Votes',
-            data: [{% for i in color_name%}{{i.color_red}}{%endfor%}, 5, 3, 5, 2, 3],
+            data: [{% for i in color_name%}{{i}}{%endfor%}, 5, 3, 5, 2, 3],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -69,8 +69,9 @@ const myChart = new Chart(ctx, {
     },
     options: {
         scales: {
-            y: {
-                beginAtZero: true
+            y: { ticks: {
+          stepSize: 8
+        }
             }
         }
     }
